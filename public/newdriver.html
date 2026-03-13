@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Create A New Driver Account</title>
+</head>
+<body>
+<h1 id="create_new_driver_account">Driver Registration</h1>
+<form action="/registerdriver" method="POST">
+    <h2 class="formheading">Create A New Driver Account</h2>
+    <p>All fields are required.</p>
+
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <label for="firstname">First Name</label>
+    <input type="text" id="firstname" name="firstname" required>
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" name="lastname" required>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    <label for="city">City</label>
+    <input type="text" id="city" name="city" required>
+    <label for="country">Country</label>
+    <input type="text" id="country" name="country" required>
+    <label for="phone">Phone</label>
+    <input type="number" id="phone" name="phone" required>
+    <label for="vehicle">Vehicle</label>
+    <input type="text" id="vehicle" name="vehicle" required>
+    <label for="licenseplate">License Plate Number</label>
+    <input type="text" id="licenseplate" name="licenseplate" required>
+    <label for="imageurl">Photo URL:</label>
+    <input type="text" id="imageurl" name="imageurl" required>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+</body>
+</html>
