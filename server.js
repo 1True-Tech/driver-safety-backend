@@ -4,11 +4,41 @@ const DB = require("./DB");
 const UACC = require("./controllers/uacc");
 const bodyParser = require('body-parser');
 const cors = require("cors");
+const fs = require("fs");
+const res = require("express/lib/response");
 
 app.use(express.json());
 //app.use(cors);
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
+
+const newdriver = fs.readFileSync('public/newdriver.html', 'utf8');
+const newrider = fs.readFileSync('public/newrider.html', 'utf8');
+
+app.get("/newdriver", (request, response) => {
+    response.send(newdriver);
+});
+
+app.get("/newrider", (request, response) => {
+    response.send(newrider);
+});
+
+app.get("/getdrivers", (request, response) => {
+    try {
+        let city = request.query.city;
+        DB.driverModel.find({City: {$eq: city} }).then((result) => {
+            let data = result;
+            if (result.length >= 1) {
+                data.Status = 200;
+                response.send(data);
+            } else {
+                response.send({Status: 404});
+            }
+        });
+    } catch (error) {
+        console.error(error);
+    }
+});
 
 //Retrieve info about a specific driver.
 app.get("/driver", cors(), (request, response) => {
