@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Find Drivers In Your Area">
+    <meta name="description" content="Create a new driver account and start offering your driving services.">
+    <title>Find Drivers In Your Area</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="browse.js"></script>
+</head>
+<body>
+
+<div class="maincontainer" id="maincontent">
+<h1 id="find_drivers_nearby">Find Drivers In Your Area</h1>
+    <label for="city">Search by city:</label>
+    <br>
+    <br>
+    <input type="text" id="inputcity" list="citylist">
+    <datalist id="citylist">
+        <option value="Kingston">Kingston</option>
+        <option>Montego Bay</option>
+    </datalist>
+    <!--
+    <select id="inputcity">
+        <option>Kingston</option>
+        <option>Montego Bay</option>
+    </select>
+    -->
+    <br>
+    <br>
+    <button type="submit" onclick="getDrivers()">Search</button>
+    <div class="resultcontainer" id="searchresults">
+
+    </div>
+</div>
+</body>
+</html>
